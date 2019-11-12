@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: mytest
+  mandatory-file-encoding: UTF-8
+  http:
+    encoding:
+      enabled: true
+      charset: UTF-8
+myConfig:
+  myObject:
+    myName: zhangsan
+    myAge: 20
