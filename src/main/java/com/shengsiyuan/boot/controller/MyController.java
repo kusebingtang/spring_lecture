@@ -1,7 +1,9 @@
 package com.shengsiyuan.boot.controller;
 
 
+import com.shengsiyuan.boot.config.MyConfigBean;
 import com.shengsiyuan.boot.domain.Person;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,14 +13,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 
 @RestController
-@RequestMapping(value = "/api",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class MyController {
 
     @Value("${myConfig.myObject.myName}")
-    private  String myName;
+    private String myName;
 
     @Value("${myConfig.myObject.myAge}")
-    private  int myAge;
+    private int myAge;
+
+    @Autowired
+    private MyConfigBean myConfigBean;
 
 
     @RequestMapping(value = "/person", method = RequestMethod.GET)
@@ -32,6 +37,10 @@ public class MyController {
         System.out.println("======@Value============");
         System.out.println(myName);
         System.out.println(myAge);
+
+        System.out.println("-------------@Autowired---------");
+        System.out.println(myConfigBean.getMyName());
+        System.out.println(myConfigBean.getMyAge());
 
         return person;
     }
