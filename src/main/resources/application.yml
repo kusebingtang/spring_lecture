@@ -12,3 +12,6 @@ myConfig:
   myObject:
     myName: zhangsan
     myAge: 20
+context:
+  initializer:
+    classes: com.shengsiyuan.boot.initializer.ThirdInitializer

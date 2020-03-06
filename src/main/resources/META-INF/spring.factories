@@ -1,0 +1,1 @@
+org.springframework.context.ApplicationContextInitializer=com.shengsiyuan.boot.initializer.FirstInitializer,com.shengsiyuan.boot.initializer.SecondInitializer
